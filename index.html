@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--10vw 10％ of view port-->
+<style>
+html, body {
+  height: 100vh;
+  width:100vw;
+  
+}
+
+ .screen{
+   background-color:green;
+   border: solid black 1px;
+   width:100%;
+   height:25%;
+   font-size:5em;
+ }
+ .special{
+   background-color: yellowgreen;
+   border: solid blue 1px;
+   width:25%;
+   height:15%;
+   font-size:3em;
+ }
+ .normal{
+   background-color:white;
+   border: solid blue 1px;
+   width:25%;
+   height:15%;
+   font-size:3em;
+ }
+ 
+ 
+ 
+</style>
+<script>
+  
+  function lclick(e){
+    
+    scr.value = scr.value+e.value;
+  }
+  function clr(e){
+    scr.value=""
+  }
+  function calc(){
+    x1=scr.value.replace("%","/100")
+    x2 = eval( x1 )
+    scr.value=x2.toPrecision(15)
+    
+  }
+</script>
+</head>
+<body>
+
+<input class="screen" type="textarea" id="scr"><br/>
+<input class="special" type="button"  value="(" onclick="lclick(this)"><input class="special" type="button"  value=")" onclick="lclick(this)"><input class="special" type="button"  value="%" onclick="lclick(this)"><input class="special" type="button"  value="C" onclick="clr(this)"><br/>
+
+<input  class="normal" type="button"  value="7"  onclick="lclick(this)"><input  class="normal" type="button"  value="8" onclick="lclick(this)"><input  class="normal" type="button"  value="9" onclick="lclick(this)"><input class="special" type="button"  value="/" onclick="lclick(this)"><br/>
+<input class="normal"  type="button"  value="4" onclick="lclick(this)"><input class="normal"  type="button"  value="5" onclick="lclick(this)"><input class="normal"  type="button"  value="6" onclick="lclick(this)"><input  class="special" type="button"  value="*" onclick="lclick(this)"><br/>
+<input class="normal"  type="button" value="1" onclick="lclick(this)"><input class="normal"  type="button"  value="2" onclick="lclick(this)"><input class="normal"  type="button"  value="3" onclick="lclick(this)"><input  class="special" type="button"  value="-" onclick="lclick(this)"> <br/>
+<input class="normal"  type="button"  value="0" onclick="lclick(this)"><input  class="special" type="button"  value="." onclick="lclick(this)"><input class="special" type="button" value="=" onclick="calc(this)"><input  class="special" type="button"  value="+" onclick="lclick(this)">    
+  
+  
+</body>
+</html>
